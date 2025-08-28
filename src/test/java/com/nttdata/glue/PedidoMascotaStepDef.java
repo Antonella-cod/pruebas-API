@@ -21,7 +21,7 @@ public class PedidoMascotaStepDef {
         pedido.configurarApi();
     }
 
-   @When("creo un nuevo order con id {int}, petId {int}, quantity {int}, shipDate {string}, status {string}, complete true")
+   @When("creo un nuevo order con id {int}, petId {int}, quantity {int}, shipDate {string}, status {string}, complete {}")
    public void creoUnNuevoPedido(int id, int petId, int quantity, String shipDate, String status, boolean complete) {
        pedido.crearPedido(id, petId, quantity, shipDate, status, complete);
    }
@@ -41,10 +41,11 @@ public class PedidoMascotaStepDef {
          pedido.consultarPedido(id);
     }
 
-    @And("la respuesta debe contener el order creado con id {int}, petId {int}, quantity {int}, shipDate {string}, status {string}, complete true")
+    @And("la respuesta debe contener el order creado con id {int}, petId {int}, quantity {int}, shipDate {string}, status {string}, complete {}")
     public void laRespuestaDebeContener(int id, int petId, int quantity, String shipDate, String status, boolean complete) {
         pedido.validarPedido(id, petId, quantity, shipDate, status, complete);
     }
 
 
 }
+
